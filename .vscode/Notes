@@ -1,0 +1,41 @@
+# comments                 -> (ctrl + /) or '''...'''
+# sambung kalimat          -> (,end ="")
+# untuk memanggil variabel -> f"...{variable}"
+
+# Boolean "bool" True or False
+# Integer "int" all integer numbers (bilangan bulat)
+# Real "float" all real numbers (termasuk pecahan)
+# Text "string" collection of characters (kalimat)
+
+# operator Description Example
+# + Addition 2 + 3 = 5
+# - Substraction 1 - 8 = -7
+# * Multiplication 5 * 6 = 30
+# / Division 13 / 5 = 2.6
+# // Division (rounded down) 13 // 5 = 2
+# % Modulo 13 % 5 = 3
+
+# Operator Description Example
+# = Assignment N = 5
+# += Addition N += 5, N will be added by 5.
+# -= Substraction N -= 5, N will be substracted by 5.
+# *= Multiplication N *= 5, N will be multiplied by 5.
+# /= Division N /= 5, N will be divided by 5.
+# //= Division (Rounded Down) N //= 5, N will be divided by 5 (then rounded down).
+# %= Modulo N %= 5, N will be modulo by 5.
+
+# Operator Description Example
+# == Equals           -> 2 == 2 
+# != Not equals       -> 3 != 2 
+# < Less than         -> 2 < 3 
+# > Greater than      -> 3 > 2 
+# <= Less or equal    -> 2 <= 2 
+# >= Greater or equal -> 6 >= 5 
+
+# Operator Description 
+# and And          -> (1 < 2)and (3 == 3) 
+# or Or            -> (1 < 2)or (4 == 3) 
+# not Negation not -> (3 < 2)
+
+# anagram   -> angkanya sama, cuma letaknya diacak
+# palindrom -> huruf yang dibaca sama jika dibaca dari kiri ke kanan/ kanan ke kiri (racecar)

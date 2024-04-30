@@ -1,0 +1,37 @@
+m = int(input("Niali M: "))
+n = int(input("Nilai N: "))
+musuh = int(input("Jumlah Musuh: "))
+
+arrmusuh = [["." for j in range (n)]for i in range (m)]
+
+for i in range (musuh):
+    y = int(input(f"Baris {i+1}: "))
+    x = int(input(f"Kolom {i+1}: "))
+    arrmusuh[y-1][x-1] = "X"
+
+nembak = int(input("Jumlah Nembak: "))
+
+for i in range(nembak):
+    arah = input("Arah tembak: ")
+    brs = int(input("Baris Tembak: "))
+    klm = int(input("Kolom Tembak: "))
+    if (arah == "horizontal"):
+        for j in range(n):
+            arrmusuh[brs-1][j] = "."
+    if (arah == "vertikal"):
+        for i in range (m):
+            arrmusuh[i][klm-1] = "."
+
+
+musuhsisa = 0
+for i in range(m):
+    for j in range(n):
+        print(arrmusuh[i][j], end=" ")
+        if arrmusuh[i][j] == "X":
+            musuhsisa += 1
+
+
+if musuhsisa > 0:
+    print(f"Masih ada musuh {musuhsisa}")
+else:
+    print(f"Nona Deb menang")
