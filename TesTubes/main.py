@@ -43,4 +43,5 @@ if __name__ == "__main__":
             break
     
     print("Program berakhir :)")
+    print("Program berakhir :)")
     
