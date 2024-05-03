@@ -1,24 +1,56 @@
 from . import Operasi
 
+def delete_console():
+    read_console() #membaca dengan menampilkan data
+    while True:
+        print("Silahkan pilih nomor buku yang akan di delete")
+        no_buku = int(input("Nomor Buku: "))
+        data_buku = Operasi.read(index = no_buku) #dari file operasi dengan fungsi read dipanggilnya index dari inputan no_buku
+        
+        if data_buku: #jika ada datanya
+            data_break = data_buku.split(",")
+            pk = data_break[0]
+            data_add = data_break[1]
+            penulis = data_break[2]
+            judul = data_break[3]
+            tahun = data_break[4][:-1] #tambah [-1] karena ada enter dibelakangnya
+
+            #data yang ingin di update
+            print("\n"+"="*100)
+            print("Data yang ingin anda hapus")
+            print(f"1. Judul\t: {judul:.40}")
+            print(f"2. Penulis\t: {penulis:.40}")
+            print(f"3. Tahun\t: {tahun:4}")
+
+            is_done = input("Yakin akan dihapus (y/n)?")
+            if is_done == "y" or is_done == "Y":
+                Operasi.delete(no_buku)
+                break
+            
+        else:
+            print("nomor tidak valid, silahkan masukan lagi")
+    
+    print("Data berhasil dihapus")
+
+
 def update_console():
     read_console() #membaca dengan menampilkan data
     while True:
         print("Silahkan pilih nomor buku yang akan di update")
         no_buku = int(input("Nomor Buku: "))
         data_buku = Operasi.read(index = no_buku) #dari file operasi dengan fungsi read dipanggilnya index dari inputan no_buku
-        
+        data_break = data_buku.split(",")
+        pk = data_break[0]
+        data_add = data_break[1]
+        penulis = data_break[2]
+        judul = data_break[3]
+        tahun = data_break[4][:-1] #tambah [-1] karena ada enter dibelakangnya
+
         if data_buku: #jika ada datanya
             break 
         else:
             print("nomor tidak valid, silahkan masukan lagi")
     
-    data_break = data_buku.split(",")
-    pk = data_break[0]
-    data_add = data_break[1]
-    penulis = data_break[2]
-    judul = data_break[3]
-    tahun = data_break[4][:-1] #tambah [-1] karena ada enter dibelakangnya
-
     while True:
         #data yang ingin di update
         print("\n"+"="*100)
@@ -45,7 +77,7 @@ def update_console():
                         print("Tahun harus angka, silahkan masukkan tahun lagi (yyyy)")
             case _: print("index tidak cocokk")
         
-        print("Data baru anda")
+        print("\nData baru anda")
         print(f"1. Judul\t: {judul:.40}")
         print(f"2. Penulis\t: {penulis:.40}")
         print(f"3. Tahun\t: {tahun:4}")

@@ -1,6 +1,29 @@
 from . import Database
 from .Util import random_string
 import time
+import os
+
+def delete(no_buku):
+    try:
+        with(open(Database.DB_NAME, 'r')) as file: # 'r' membaca data
+            counter = 0
+            while True:
+                content = file.readline()
+                if len(content) == 0 : #tidak ada data
+                    break
+                elif counter == no_buku - 1 :
+                    pass #skip/ lanjut kalau di nomer bukunya, nanti di copas buku setelahnya sehingga di temp_file tidak ada buku yang akan kita hapus (kaya copy file baru tanpa buku yang akan kita hapus)
+                else:
+                    with open("data_temp.txt", 'a', encoding="utf-8") as temp_file:
+                        temp_file.write(content) #nulis data baru di temp_file dari copyan data.txt
+                counter += 1
+    except:
+        print("Database error")
+
+    os.replace("data_temp.txt", Database.DB_NAME) #beda dari yt kelas terbuka, agar mengganti data baru
+
+
+
 
 def update(no_buku,pk,data_add,tahun,judul,penulis):
     data = Database.TEMPLATE.copy() #salin data yang ada di file database, copy isi template
