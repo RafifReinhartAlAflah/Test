@@ -1,0 +1,36 @@
+def hitung(m, n, p, khusus=True):
+    # mn^p + (m-1)n^(p-1) + .... + 1n^k
+    if m == 1:
+        if khusus and p == 1:
+            return n**1
+        else:
+            return n**p
+    else:
+        if khusus and p == 1:
+            return m*n**p + hitung(m-1, n, 1)
+        elif p == 1:
+            return m*n**p + hitung(m-1, n, 2, False)
+        else:
+            return m*n**p + hitung(m-1, n, p-1, False)
+
+m = int(input())
+n = int(input())
+p = int(input())
+
+a = hitung(m, n, p)
+
+hasil = 0 ; khusus = True
+while m >= 1:
+    hasil += m*n**p
+    if p == 1 and khusus:
+        m -= 1
+    elif p == 1:
+        khusus = False
+        m -= 1
+        p = 2
+    else:
+        khusus = False
+        m -= 1
+        p -= 1
+
+print(f"loop={hasil} fungsi={a}")
