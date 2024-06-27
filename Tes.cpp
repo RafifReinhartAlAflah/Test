@@ -233,25 +233,25 @@ using namespace std;
 
 //'''Inheritance'''
 // Base class: Shape
-class Shape {
-    public:
-        // Member function in the base class
-        void display() {
-            std::cout << "Shape" << std::endl;
-        }
-};
-// Derived class: Circle, inherits from Shape
-class Circle : public Shape {
-    public:
-        // Overriding the display function in the derived class
-        void display() {
-            std::cout << "Lingkaran" << std::endl;
-        }
-};
-// Main function
-int main() {
-    // Creating an object of the derived class Circle
-    Circle circle;
-    // Calling the overridden display function in the Circle class
-    circle.display();
-}
+// class Shape {
+//     public:
+//         // Member function in the base class
+//         void display() {
+//             std::cout << "Shape" << std::endl;
+//         }
+// };
+// // Derived class: Circle, inherits from Shape
+// class Circle : public Shape {
+//     public:
+//         // Overriding the display function in the derived class
+//         void display() {
+//             std::cout << "Lingkaran" << std::endl;
+//         }
+// };
+// // Main function
+// int main() {
+//     // Creating an object of the derived class Circle
+//     Circle circle;
+//     // Calling the overridden display function in the Circle class
+//     circle.display();
+// }
