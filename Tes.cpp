@@ -183,3 +183,75 @@ using namespace std;
     // delete[] arr;
     // std::cout << std::endl;
 // }
+
+//'''Object-Oriented Programming'''
+// Definition of the Rectangle class
+// class Rectangle {
+//     public: //inisiasi tipe data
+//         int length;
+//         int width;
+//         int area() { // Fungis operasi untuk menghitung area segiempat 
+//             return length * width;
+//         }
+// };
+// // Main function
+// int main() {
+//     Rectangle rect; //inisiasi rect sebagai Rectangle
+//     rect.length = 4;
+//     rect.width = 3;
+//     // Calculating and displaying the area of the rectangle
+//     std::cout << "Rectangle Area: " << rect.area() << std::endl;
+// }
+
+//'''Operator overloading'''
+// Definition of the Complex class
+// class Complex {
+//   public:
+//     int real;
+//     int imag;
+//     // Operator overloading for addition
+//     Complex operator+(const Complex &c) {
+//         Complex temp;
+//         temp.real = real + c.real;
+//         temp.imag = imag + c.imag;
+//         return temp;
+//     }
+// };
+
+// // Main function
+// int main() {
+//     // Creating objects of the Complex class
+//     Complex a, b, result;
+//     // Assigning values to complex numbers
+//     a.real = 3; a.imag = 2;
+//     b.real = 1; b.imag = 7;
+//     // Using the overloaded + operator to add complex numbers
+//     result = a + b;
+//     // Displaying the sum of complex numbers
+//     std::cout << "Sum: " << result.real << " + " << result.imag << "i" << std::endl;
+// }
+
+//'''Inheritance'''
+// Base class: Shape
+class Shape {
+    public:
+        // Member function in the base class
+        void display() {
+            std::cout << "Shape" << std::endl;
+        }
+};
+// Derived class: Circle, inherits from Shape
+class Circle : public Shape {
+    public:
+        // Overriding the display function in the derived class
+        void display() {
+            std::cout << "Lingkaran" << std::endl;
+        }
+};
+// Main function
+int main() {
+    // Creating an object of the derived class Circle
+    Circle circle;
+    // Calling the overridden display function in the Circle class
+    circle.display();
+}
