@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -255,3 +256,53 @@ using namespace std;
 //     // Calling the overridden display function in the Circle class
 //     circle.display();
 // }
+
+//'''Polymorphism'''
+// Base class: Animal
+// class Animal {
+//     public:
+//         // Virtual function in the base class
+//         virtual void sound() {
+//             std::cout << "Animal Sound" << std::endl;
+//         }
+// };
+// // Derived class: Dog, inherits from Animal
+// class Dog : public Animal {
+//     public:
+//         // Overriding the virtual function in the derived class
+//         void sound() override {
+//             std::cout << "Woof!" << std::endl;
+//         }
+// };
+// // Main function
+// int main() {
+//     // Creating a pointer to the base class (Animal) and assigning it the address of an object of the derived class (Dog)
+//     Animal *ptr = new Dog();
+//     // Calling the virtual function using the pointer, which resolves to the overridden function in the Dog class
+//     ptr->sound();
+//     // Deleting the dynamically allocated object
+//     delete ptr;
+//     return 0;
+// }
+
+//'''Templates'''
+// template <typename T>
+// T add(T a, T b) { //Fungsi T dengan parameter a dan b dapat digunakan oleh tipe integer maupun float
+//     return a + b;
+// }
+
+// int main() {
+//     std::cout << "Sum: " << add(3, 4) << std::endl;
+//     std::cout << "Sum: " << add(2.5, 3.5) << std::endl;
+//     return 0;
+// }
+
+//'''Standard Template Library - Vector
+// int main() {
+//     std::vector<float> numbers = {1, 2, 3};
+//     numbers.push_back(6); //menambahkan angka 6 di akhir urutan Array numbers di atas
+//     std::cout << "Vector Size: " << numbers.size() << std::endl; //sehingga Array yang awalnya berisi 3, lalu ditambahkan angka baru(6).
+//     //akhirnya sekarang Array berisi 4 angka
+//     return 0;
+// }
+
