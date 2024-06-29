@@ -82,6 +82,34 @@ using namespace std;
 //     }
 // }
 
+//'''desimal/ pecahan'''
+// int main(){
+//     double nilai = 98.8;
+//     double tinggi = 170.5;
+//     std::cout << nilai <<"\n";
+//     std::cout << "Tinggi kamu sekarang: "<<tinggi << "cm";
+// }
+
+//'''inisiasi yang sama dengan fungsi yang berbeda'''
+// namespace first{
+//     int x = 10;
+// }
+
+// namespace second{
+//     int x = 5;
+// }
+
+// int main(){
+//     using namespace second;
+
+//     std::cout << first::x << "\n"; //dapat mengambil inisiasi x fungsi first 
+//     //dengan menyantumkan nama fungsi tersebut di depannya
+    
+//     using std::cout; //mempersingkat sehingga tidak perlu menulis "std::" di awalan
+//     cout << x; //karena telah menggunakan fungsi second
+//     //maka dia akan menampilkan nilai x di fungsi second
+// }
+
 // '''Looping'''
 // int main() {
 // //1. While loop
