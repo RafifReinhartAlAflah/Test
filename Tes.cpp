@@ -83,12 +83,29 @@ using namespace std;
 // }
 
 //'''desimal/ pecahan'''
-// int main(){
-//     double nilai = 98.8;
-//     double tinggi = 170.5;
-//     std::cout << nilai <<"\n";
-//     std::cout << "Tinggi kamu sekarang: "<<tinggi << "cm";
-// }
+int main(){
+    // double nilai = 98.8;
+    // double tinggi = 170.5;
+    // std::cout << nilai <<"\n";
+    // std::cout << "Tinggi kamu sekarang: "<<tinggi << "cm";
+
+    // int correct = 8;
+    // int questions = 10;
+    // double score = (double)correct/questions *100;
+    // //harus ubah tipe data int menjadi double agar bisa di bagi
+
+    // std::cout << score << " %";
+
+    // double correct = 8;
+    // int questions = 10;
+    // double score = correct/questions *100;
+    // //harus ubah tipe datanya menjadi double agar bisa di bagi
+
+    // std::cout << score << " %";
+
+    //karena tipe int saat di bagi akan menghasilkan bil.bulat
+    //maka dari itu harus diubah menjadi tipe double terlebih dahulu
+}
 
 //'''inisiasi yang sama dengan fungsi yang berbeda'''
 // namespace first{
@@ -102,12 +119,30 @@ using namespace std;
 // int main(){
 //     using namespace second;
 
-//     std::cout << first::x << "\n"; //dapat mengambil inisiasi x fungsi first 
-//     //dengan menyantumkan nama fungsi tersebut di depannya
+//     std::cout << first::x << "\n"; //dapat mengambil inisiasi x fungsi "first" 
+//     //dengan menyantumkan nama fungsi tersebut di depan X
     
 //     using std::cout; //mempersingkat sehingga tidak perlu menulis "std::" di awalan
 //     cout << x; //karena telah menggunakan fungsi second
 //     //maka dia akan menampilkan nilai x di fungsi second
+// }
+
+//'''Similarity between typedef and using untuk tipe data dalam mempersingkat code'''
+//1.
+// typedef std::string text_t; //harus diakhir "_t"
+// typedef int number_t;
+//2. using lebi enak
+// using text_t = std::string;
+// using number_t = int;
+
+// int main(){
+//     using std::cout;
+//     text_t firstName = "Rafif"; //firstName bertipe string
+//     number_t age = 18;
+
+//     //bebas mau diinisiasi dlu di atas std::cout nya / tulis satu"
+//     cout<< firstName << "\n";
+//     std::cout << age;
 // }
 
 // '''Looping'''
