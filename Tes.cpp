@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -39,12 +40,20 @@ using namespace std;
 // '''String and Integer Operation'''
 // int main()
 // {
-// //1.
-//     // int age;
-//     // std::cout << "Enter your age: ";
-//     // std::cin >> age;
-//     // std::cout << "Your age 2 years ago was: " << age - 2 << std::endl;
-//     // return 0; //menunjukkan program berhasil dieksekusi
+// // 1.
+//     std::string name;
+//     int age;
+
+//     std::cout << "Enter your age: ";
+//     std::cin >> age;
+    
+//     std::cout << "What's your full name?: ";
+//     std::getline(std::cin >> std::ws, name); //getline berguna untuk string yang berupa kalimat
+//     //>> std::ws berguna agar bisa input setelah inputan age sebelumnya
+
+//     std::cout << "Hello " << name << "\n";
+//     std::cout << "Your age 2 years ago was: " << age - 2 << std::endl;
+//     return 0; //menunjukkan program berhasil dieksekusi
 
 // //2.
 //     // int n,xo;
@@ -83,7 +92,7 @@ using namespace std;
 // }
 
 //'''desimal/ pecahan'''
-int main(){
+// int main(){
     // double nilai = 98.8;
     // double tinggi = 170.5;
     // std::cout << nilai <<"\n";
@@ -105,7 +114,24 @@ int main(){
 
     //karena tipe int saat di bagi akan menghasilkan bil.bulat
     //maka dari itu harus diubah menjadi tipe double terlebih dahulu
-}
+// }
+
+//'''Math Operation'''
+// int main(){
+//     double x = 2.49;
+//     double y = 4;
+//     double z;
+
+//     // z = std::max(x,y); //mencari nilai maximal
+//     // z = std::min(x,y); //mencari nilai minimal
+//     // z = pow(2,4); //perpangkatan dari 2 pangkat 4
+//     // z = sqrt(9); //akar 9
+//     // z = abs(-2); // |-2| (mutlak)
+//     // z = round(x); //pembulatan ke bawah if < 2.5 and pembulata ke atas if >= 2.5
+//     // z = floor(x); //pembulatan ke bawah
+//     // z = ceil(x); //pembulatan ke atas
+
+//     std::cout << z;
 
 //'''inisiasi yang sama dengan fungsi yang berbeda'''
 // namespace first{
