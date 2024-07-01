@@ -288,7 +288,7 @@ using namespace std;
 // }
 
 // '''Looping'''
-// int main() {
+int main() {
 // //1. While loop
 //     int i = 1; //inisiasi
 //     // The while loop continues as long as the condition (i <= 5) is true
@@ -298,14 +298,35 @@ using namespace std;
 //     }
 //     std::cout << std::endl;
 
-// //2. For loop
-//     for (int i = 1; i <= 5; i++) {
-//     std::cout << i << " ";
-//     }
+    // int number;
 
-//     std::cout << std::endl;
-//     return 0;
-// }
+    // do{
+    //     std::cout << "Enter a positive #: ";
+    //     std::cin >> number;
+    // }while(number < 0);
+    // //mempersingkat code, dgn menerima input dahulu baru di cek apakah number < 0 ?
+    // //apabila number >= 0, maka tidak menerima input dalam loop lagi
+
+    // std::cout << "The # is: " << number;
+
+// //2. For loop
+    // for (int i = 1; i <= 5; i+=2) {
+    // std::cout << i << " ";
+    // }
+    // std::cout<<"\n";
+    // for (int i = 5; i >= 1; i--) {
+    // std::cout << i << " ";
+    // }
+    // return 0;
+
+    // for (int i = 1; i <= 5; i++){
+    //     if(i == 3){
+    //        continue; //mirip break, namun tidak keluar loop dan tetap melanjutkan loop
+    //         // break; //berguna utk keluar paksa dari loop saat case True
+    //     }
+    //     std::cout << i << "\n";
+    // }
+}
 
 //'''Array'''
 // int main() {
