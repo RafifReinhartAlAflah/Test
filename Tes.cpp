@@ -8,9 +8,8 @@
 using namespace std;
 
 // '''String Operation'''
-// int main()
-// {
-//print String
+// int main(){
+//1. print String
 //cara 1.
 //     // std::cout << "Hello, World! \n" ;
 //     // std::cout << "Hahaha" << std::endl;
@@ -34,12 +33,21 @@ using namespace std;
     //     std::cout << greeting + name << std::endl;
     // }
 
- 
-// }
+//2. ambil, cari, hapus character dari string
+//     std::string name;
+
+//     std::cout << "Enter your name: ";
+//     std::getline(std::cin, name);
+
+//     std::cout << name.at(1) << std::endl; //mengambil character index-1 (huruf kedua)
+//     std::cout << name.find(' ') << std::endl; //mencari nomor index character spasi ' '
+
+//     name.erase(0, 5); //hapus 5 huruf di index-0 (awalan)
+//     std::cout << name;
+// } 
 
 // '''String and Integer Operation'''
-// int main()
-// {
+// int main(){
 // // 1.
 //     std::string name;
 //     int age;
@@ -69,10 +77,30 @@ using namespace std;
 //     //     pos += n
 //     // );
 //     // cout << i;
+
+//3. length of string (spasi juga termsuk character)
+//     std::string name;
+
+//     std::cout << "Enter your name:";
+//     std::getline(std::cin, name);
+
+//     if (name.empty()){
+//         std::cout << "You didn't input your name";
+//     }
+//     else if (name.length() > 12){
+//         std::cout << "Your name can't be over 12 character";
+//     }
+//     else{
+//         name.append("@gmail.com"); //nambah di belakang dan harus sebelum cout
+//         name.insert(0, "Bpk."); //nambah tulisan "Bpk." di index-0 (huruf pertama/ awalan)
+//         std::cout << "Welcome " << name;
+//     }
 // }
+
 
 // '''Integer Operation'''
 // int main(){
+//1.
 //     int num;
 
 //     std::cout << "Enter a number: ";
@@ -89,6 +117,33 @@ using namespace std;
 //     else{
 //         std::cout << "Zero" << std::endl;
 //     }
+//2.
+//     double a;
+//     double b;
+//     double c;
+
+//     std::cout << "Enter side A: ";
+//     std::cin >> a;
+
+//     std::cout << "Enter side B: ";
+//     std::cin >> b;
+
+//     a = pow(a,2); //perpangkatan 2
+//     b = pow(b,2);
+
+//     c = sqrt(a + b); //phytagoras
+
+//     std::cout << "Sisi miringnya adalah " << c;
+
+//3.
+//     int grade =75;
+
+//     grade >= 60 ? std::cout << "You pass!" : std::cout << "You fail!";
+// // if : else, jika >= 60 kondisi if benar  : jika < 60 kondisi else terpenuhi
+
+//4. 
+//     int number = 9;
+//     number % 2 == 1 ? std::cout << "Ganjil" : std::cout << "Genap";
 // }
 
 //'''desimal/ pecahan'''
@@ -116,6 +171,16 @@ using namespace std;
     //maka dari itu harus diubah menjadi tipe double terlebih dahulu
 // }
 
+//'''Boolean (True/False)'''
+// int main(){
+//     bool hungry = true;
+
+//     hungry? std::cout << "You are hungry" : std::cout << "You are full";
+//     //                               true : false ( atas dan bwh sama aja )
+//     std::cout << (hungry ? "You are hungry " : "You are full");
+
+// }
+
 //'''Math Operation'''
 // int main(){
 //     double x = 2.49;
@@ -132,6 +197,57 @@ using namespace std;
 //     // z = ceil(x); //pembulatan ke atas
 
 //     std::cout << z;
+
+//kondisi if else yang banyak -> switch
+//1. integer
+// int main(){
+//     int month;
+//     std::cout << "Enter the month(1-4): ";
+//     std::cin >> month;
+
+//     switch(month){// memperpendek code, daripada menggunakan else if
+//         case 1:
+//             std::cout << "It is January";
+//             break;
+//         case 2:
+//             std::cout<< "It is February";
+//             break;
+//         case 3:
+//             std::cout<< "It is March";
+//             break;
+//         case 4:
+//             std::cout<< "It is April";
+//             break;
+//         default:
+//             std::cout << "Please enter in only numbers(1-4)";
+//     }
+// }
+
+//2.Character
+// int main(){
+//     char grade;
+//     std::cout << "Enter your grade: ";
+//     std::cin >> grade;
+
+//     switch (grade){
+//     case 'A':
+//         std::cout << "Excellent ";
+//         break;
+//     case 'B':
+//         std::cout << "Great ";
+//         break;
+//     case 'C':
+//         std::cout << "Good ";
+//         break;
+//     case 'D':
+//         std::cout << "You Fail :( ";
+//         break;
+//     default:
+//         std::cout << "Please enter grade (A-D) ";
+
+//         break;
+//     }
+// }
 
 //'''inisiasi yang sama dengan fungsi yang berbeda'''
 // namespace first{
