@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include <cmath>
+#include <ctime>
 
 using namespace std;
 
@@ -288,7 +289,7 @@ using namespace std;
 // }
 
 // '''Looping'''
-int main() {
+// int main() {
 // //1. While loop
 //     int i = 1; //inisiasi
 //     // The while loop continues as long as the condition (i <= 5) is true
@@ -326,7 +327,28 @@ int main() {
     //     }
     //     std::cout << i << "\n";
     // }
-}
+
+//3. Nested loop
+    // int baris;
+    // int kolom;
+    // char simbol;
+
+    // std::cout << "Banyak baris: ";
+    // std::cin >> baris;
+
+    // std::cout << "Banyak kolom: ";
+    // std::cin >> kolom;
+
+    // std::cout << "Silakan inputkan simbol: ";
+    // std::cin >> simbol;
+
+    // for(int i = 1;  i <= baris; i++ ){
+    //     for(int j = 1;  j <= kolom; j++){
+    //         std::cout << simbol;
+    //     }
+    //     std::cout << "\n";
+    // }
+// }
 
 //'''Array'''
 // int main() {
@@ -532,3 +554,31 @@ int main() {
 //     return 0;
 // }
 
+//'''Random'''
+//1. Random Number
+// int main(){
+//     srand(time(NULL));
+
+//     int num = (rand() % 6) + 1; //angka random 0 - 32.767
+//     //mod 6 agar menghasilkan 6 angka karena dadu hanya memiliki 6 sisi angka pada dadu secara acak
+//     //awalnya berisi angka 0-5, maka (+1) agar tidak ada angka 0 yang keluar dan berisi (1-6)
+
+//     std::cout << num;
+// }
+
+//2. Random Event Generator
+// int main (){
+//     srand(time(0));
+//     int randNum = rand() % 4 + 1;
+
+//     switch(randNum){
+//         case 1 : std::cout << "You win $100 \n";
+//                  break;
+//         case 2 : std::cout << "You win $10 \n";
+//                  break;
+//         case 3 : std::cout << "You win $1 \n";
+//                  break;
+//         case 4 : std::cout << "You got nothing :D \n";
+//                  break;
+//     }       
+// }
