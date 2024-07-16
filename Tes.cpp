@@ -582,3 +582,34 @@ using namespace std;
 //                  break;
 //     }       
 // }
+
+//3. Random game
+// int main(){
+//     int num;
+//     int guess;
+//     int tries;
+
+//     srand(time(NULL)); //menghasilkan angka random
+//     num = (rand() % 100) + 1; //angka random 1-100, ada (+1) karena awalnya 0-99 jadi harus ditambah 1 agar jadi 1-100
+
+//     std::cout << "*** Number Guessing Game ***\n";
+
+//     do{
+//         std::cout << "Enter a guess between(1-100): ";
+//         std::cin >> guess;
+//         tries++; //inisiasi yg akan terus bertambah, mirip tries += 1
+
+//         if(guess > num){
+//             std::cout << "Terlalu tinggi!\n";
+//         }
+//         else if(guess < num){
+//             std::cout << "Terlalu rendah!\n";
+//         }
+//         else{ //guess == num
+//             std::cout << "BENARR!!, jawabannya adalah " << tries << "\n";
+//         }
+    
+//     }while(guess != num);
+
+//     std::cout << "*** SELESAI ***";
+// }
