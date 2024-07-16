@@ -597,7 +597,7 @@ using namespace std;
 //     do{
 //         std::cout << "Enter a guess between(1-100): ";
 //         std::cin >> guess;
-//         tries++; //inisiasi yg akan terus bertambah, mirip tries += 1
+//         tries++; //inisiasi yg akan terus bertambah, mirip tries += 1. berguna untuk menghitung berapa kali percobaan hingga kita bisa menebak angkanya
 
 //         if(guess > num){
 //             std::cout << "Terlalu tinggi!\n";
@@ -606,7 +606,7 @@ using namespace std;
 //             std::cout << "Terlalu rendah!\n";
 //         }
 //         else{ //guess == num
-//             std::cout << "BENARR!!, jawabannya adalah " << tries << "\n";
+//             std::cout << "BENARR!!, Anda telah mencoba sebanyak: " << tries << "\n";
 //         }
     
 //     }while(guess != num);
