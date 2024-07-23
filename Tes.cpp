@@ -613,3 +613,68 @@ using namespace std;
 
 //     std::cout << "*** SELESAI ***";
 // }
+
+//'''Function'''
+//karena dia dibaca prosedural dari atas ke bawah
+//untuk memanggil sesuatu juga harus di tuliskan di dalam "( )", tentang parameter apa saja yang digunakan
+
+// void happyBirthday(std::string name, int age); //maka ini bisa ditulis di atas "main" agar terbaca fungsi yang akan dipakai
+
+// int main(){
+//     std::string name = "Rafif";
+//     int age = 21;
+
+//     happyBirthday(name, age);//memanggil fungsi happyBirthday
+// }
+
+// void happyBirthday(std::string name, int age){ //fungsi yang akan dipanggil
+//     std::cout << "Happy Birthday to " << name << "\n";
+//     std::cout << "Happy Birthday to " << name << "\n";
+//     std::cout << "Happy Birthday to " << name << "\n";
+//     std::cout << "You are " << age << " Years old\n";
+// }
+
+//'''Return dalam Function'''
+//kenapa ga pake void?, kit menyesuaikan dengan tipe parameter yang digunakan, jika double maka void digantikan dengan double
+//1.
+// double square(double panjang);
+// double cube(double panjang);
+
+// int main(){
+// //inisiasi nilai variabel di main, lalu prosesnya dilakukan di Function lain
+//     double panjang = 6.0;
+//     double area = square(panjang);//ambil fungsi square dan gunakan parameter panjang sebagai nilai yang akan diproses dalam fungsi square
+//     double volume = cube(panjang);//ambil fungsi square dan gunakan parameter panjang sebagai nilai yang akan diproses dalam fungsi square
+
+//     std::cout << "Area: " << area << " cm^2\n";
+//     std::cout << "Volume: " << volume << " cm^3";
+// }
+
+// double square(double panjang){
+//     double result = panjang * panjang;
+//     return result;
+// }
+
+// double cube(double panjang){
+//     double result = panjang * panjang * panjang;
+//     return result;
+// }
+
+//2.
+//nama parameter di "( )" bole diubah, ga bakal beda hasilnya
+//namun, di "main" harus sesuai parameter yang ingin dimasukkan ke string1,2,3 karena dia akan masuk secara berurut yang dipisahkan koma
+
+// std::string concatStrings(std::string string1, std::string string2, std::string string3);
+
+// int main(){
+//     std::string firstName = "Rafif";
+//     std::string middleName = "Reinhart";
+//     std::string lastName = "Al Aflah";
+//     std::string fullNamme = concatStrings(firstName, middleName, lastName);
+
+//     std::cout << "Hello " << fullNamme << " :D";
+// }
+
+// std::string concatStrings(std::string string1, std::string string2, std::string string3){
+//     return string1 + " " + string2 + " " + string3;
+// }
