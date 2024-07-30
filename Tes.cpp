@@ -678,3 +678,45 @@ using namespace std;
 // std::string concatStrings(std::string string1, std::string string2, std::string string3){
 //     return string1 + " " + string2 + " " + string3;
 // }
+
+//'''Fungsi sama yang bertambah parameternya'''
+// main harus di paling bawah dan fungsi harus di atas main
+// void bakePizza();
+// void bakePizza(std::string topping1);
+// void bakePizza(std::string topping1, std::string topping2);
+
+// int main(){
+//     // bakePizza(); //akan mengambil fungsi kedua
+//     // bakePizza("Pepperoni"); //akan mengambil fungsi kedua
+//     // bakePizza("Pepperoni", "Mushroom"); //akan mengambil fungsi ketiga
+
+// }
+// //fungsi 1
+// void bakePizza(){
+//     std::cout << "Here is your pizza!\n";
+// }
+// //fungsi 2
+// void bakePizza(std::string topping1){ //fungsi ini dipilih jika parameternya 1
+//     std::cout << "Here is your " << topping1 << " pizza! \n";
+// }
+// //fungsi 3
+// void bakePizza(std::string topping1, std::string topping2){ //fungsi ini dipilih jika paramternya 2
+//     std::cout << "Here is your " << topping1 << " and " << topping2 << " pizza \n";
+// }
+
+//'''Local dan Global variable
+//lebih mengutamakan inisiasi local dalam main/fungsi
+//if ingin menggunakan inisiasi global di luar main/fungsi, bisa tambahkan "::". seperti std::cout << ::myNum
+int myNum = 2; //Global variable bisa digunain untuk semua fungsi dan gaperlu dideklarasiin
+
+void printNum();//(int myNum)
+
+int main(){
+    int myNum = 1; //Local variable, harus diinput/deklarasiin dalam paramter fungsi
+    printNum();//(myNum) //print fungsi ini dulu, baru print di bawah (INGAT PROSEDURAL ATAS KE BAWAH, KANAN KE KIRI) 
+    std::cout << myNum; //ngambil inisiasi local terlebih dahulu
+}
+
+void printNum(){//(int myNum) akan ngambil inisiasi Local dan tanpa parameter akan ngambil inisiasi Global
+    std::cout << myNum << "\n"; //ngambil inisiasi global
+}
