@@ -5,6 +5,8 @@
 #include <vector>
 #include <cmath>
 #include <ctime>
+#include <iomanip> //untuk angka desimal
+
 
 using namespace std;
 
@@ -707,16 +709,95 @@ using namespace std;
 //'''Local dan Global variable
 //lebih mengutamakan inisiasi local dalam main/fungsi
 //if ingin menggunakan inisiasi global di luar main/fungsi, bisa tambahkan "::". seperti std::cout << ::myNum
-int myNum = 2; //Global variable bisa digunain untuk semua fungsi dan gaperlu dideklarasiin
+// int myNum = 2; //Global variable bisa digunain untuk semua fungsi dan gaperlu dideklarasiin
 
-void printNum();//(int myNum)
+// void printNum();//(int myNum)
+
+// int main(){
+//     int myNum = 1; //Local variable, harus diinput/deklarasiin dalam paramter fungsi
+//     printNum();//(myNum) //print fungsi ini dulu, baru print di bawah (INGAT PROSEDURAL ATAS KE BAWAH, KANAN KE KIRI) 
+//     std::cout << myNum; //ngambil inisiasi local terlebih dahulu
+// }
+
+// void printNum(){//(int myNum) akan ngambil inisiasi Local dan tanpa parameter akan ngambil inisiasi Global
+//     std::cout << myNum << "\n"; //ngambil inisiasi global
+// }
+
+//'''Banking Program
+
+void showBalance(double balance);
+double deposit();
+double withdraw(double balance);
 
 int main(){
-    int myNum = 1; //Local variable, harus diinput/deklarasiin dalam paramter fungsi
-    printNum();//(myNum) //print fungsi ini dulu, baru print di bawah (INGAT PROSEDURAL ATAS KE BAWAH, KANAN KE KIRI) 
-    std::cout << myNum; //ngambil inisiasi local terlebih dahulu
+    double balance = 10.95;
+    int choice = 0;
+
+    do{
+        std::cout<< "****************** \n";
+        std::cout<< "Enter your choice: \n";
+        std::cout<< "****************** \n";
+        std::cout<< "1. Show Balance \n";
+        std::cout<< "2. Deposit Money \n";
+        std::cout<< "3. Withdraw Money \n";
+        std::cout<< "4. Exit \n";
+        std::cout<< "What Number : ";
+        std::cin >> choice;
+
+        std::cin.clear(); 
+        fflush(stdin);
+
+        switch(choice){
+            case 1: showBalance(balance);
+                    break;
+            case 2: balance += deposit();
+                    showBalance(balance);
+                    break;
+            case 3: balance -= withdraw(balance);
+                    showBalance(balance);
+                    break;
+            case 4: std::cout<< "Thanks for visiting\n";
+                    break;
+            default: std::cout<< "Invalid choice\n";
+            }
+        }while(choice != 4); //kalau 4, dia langsung keluar loop
+        //jika selain 4 akan meminta pilihan secara berulang
 }
 
-void printNum(){//(int myNum) akan ngambil inisiasi Local dan tanpa parameter akan ngambil inisiasi Global
-    std::cout << myNum << "\n"; //ngambil inisiasi global
+void showBalance(double balance){
+    std::cout << "Your balance is: $" << std::setprecision(2) << std::fixed << balance << "\n";
+}//menggunakan #include <iomanip> untuk mendapatkan angka dibelakang koma 
+ //dengan mengatur banyak angka belakang koma yang diinginkan dengan setprecision
+
+double deposit(){
+    double amount = 0;
+    
+    std::cout<< "Enter amount to be deposited: ";
+    std::cin>>amount;
+    if(amount >0){
+        return amount;
+    }
+    else{
+        std::cout<< "Thats not a valid amount: \n";
+        return 0; //ini berguna biar bisa balik untuk ngeloop lagi
+    }
+}
+
+double withdraw(double balance){
+    double amount = 0;
+
+    std::cout<< "Enter amount to be withdrawan:";
+    std::cin>>amount;
+
+    if(amount > balance){
+        std::cout<< "Insufficient funds \n";
+        return 0; //untuk ngeloop lagi
+    }
+    else if(amount < 0){
+        std::cout << "That's not a valid amount \n";
+        return 0; //untuk ngeloop lagi
+    }
+    else{
+        return amount;
+    }
 }
