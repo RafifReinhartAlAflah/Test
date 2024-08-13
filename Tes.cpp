@@ -723,81 +723,184 @@ using namespace std;
 //     std::cout << myNum << "\n"; //ngambil inisiasi global
 // }
 
-//'''Banking Program
+//'''Banking Program'''
 
-void showBalance(double balance);
-double deposit();
-double withdraw(double balance);
+// void showBalance(double balance);
+// double deposit();
+// double withdraw(double balance);
+
+// int main(){
+//     double balance = 10.95;
+//     int choice = 0;
+
+//     do{
+//         std::cout<< "****************** \n";
+//         std::cout<< "Enter your choice: \n";
+//         std::cout<< "****************** \n";
+//         std::cout<< "1. Show Balance \n";
+//         std::cout<< "2. Deposit Money \n";
+//         std::cout<< "3. Withdraw Money \n";
+//         std::cout<< "4. Exit \n";
+//         std::cout<< "What Number : ";
+//         std::cin >> choice;
+
+//         std::cin.clear(); 
+//         fflush(stdin);
+
+//         switch(choice){
+//             case 1: showBalance(balance);
+//                     break;
+//             case 2: balance += deposit();
+//                     showBalance(balance);
+//                     break;
+//             case 3: balance -= withdraw(balance);
+//                     showBalance(balance);
+//                     break;
+//             case 4: std::cout<< "Thanks for visiting\n";
+//                     break;
+//             default: std::cout<< "Invalid choice\n";
+//             }
+//         }while(choice != 4); //kalau 4, dia langsung keluar loop
+//         //jika selain 4 akan meminta pilihan secara berulang
+// }
+
+// void showBalance(double balance){
+//     std::cout << "Your balance is: $" << std::setprecision(2) << std::fixed << balance << "\n";
+// }//menggunakan #include <iomanip> untuk mendapatkan angka dibelakang koma 
+//  //dengan mengatur banyak angka belakang koma yang diinginkan dengan setprecision
+
+// double deposit(){
+//     double amount = 0;
+    
+//     std::cout<< "Enter amount to be deposited: ";
+//     std::cin>>amount;
+//     if(amount >0){
+//         return amount;
+//     }
+//     else{
+//         std::cout<< "Thats not a valid amount: \n";
+//         return 0; //ini berguna biar bisa balik untuk ngeloop lagi
+//     }
+// }
+
+// double withdraw(double balance){
+//     double amount = 0;
+
+//     std::cout<< "Enter amount to be withdrawan:";
+//     std::cin>>amount;
+
+//     if(amount > balance){
+//         std::cout<< "Insufficient funds \n";
+//         return 0; //untuk ngeloop lagi
+//     }
+//     else if(amount < 0){
+//         std::cout << "That's not a valid amount \n";
+//         return 0; //untuk ngeloop lagi
+//     }
+//     else{
+//         return amount;
+//     }
+// }
+
+//'''rock paper scissors game'''
+//inisiasi fungsi yang digunakan
+char getUserChoice();
+char getComputerChoice();
+void showChoice(char choice);
+void chooseWinner(char player, char computer);
 
 int main(){
-    double balance = 10.95;
-    int choice = 0;
+    char player;
+    char computer;
+
+    player = getUserChoice();
+    std::cout << "You choice: ";
+    showChoice(player);
+
+    computer = getComputerChoice();
+    std::cout << "Computer's choice: ";
+    showChoice(computer);
+
+    chooseWinner(player,computer);
+    
+}
+
+char getUserChoice(){
+    char player; //huruf yang diinputkan dari player
+    std::cout <<"Rock-Paper-Scissors Game!\n";
 
     do{
-        std::cout<< "****************** \n";
-        std::cout<< "Enter your choice: \n";
-        std::cout<< "****************** \n";
-        std::cout<< "1. Show Balance \n";
-        std::cout<< "2. Deposit Money \n";
-        std::cout<< "3. Withdraw Money \n";
-        std::cout<< "4. Exit \n";
-        std::cout<< "What Number : ";
-        std::cin >> choice;
+        std::cout <<"Choose one of the following\n";
+        std::cout <<"-------------------------\n";
+        std::cout << "'r' for rock\n";
+        std::cout << "'p' for paper\n";
+        std::cout << "'s' for scissors\n";
+        std::cin >> player;
 
-        std::cin.clear(); 
-        fflush(stdin);
+    }while(player != 'r' && player != 'p' && player != 's');
 
-        switch(choice){
-            case 1: showBalance(balance);
-                    break;
-            case 2: balance += deposit();
-                    showBalance(balance);
-                    break;
-            case 3: balance -= withdraw(balance);
-                    showBalance(balance);
-                    break;
-            case 4: std::cout<< "Thanks for visiting\n";
-                    break;
-            default: std::cout<< "Invalid choice\n";
-            }
-        }while(choice != 4); //kalau 4, dia langsung keluar loop
-        //jika selain 4 akan meminta pilihan secara berulang
+    return player; //diakhiri dengan inputan player
 }
+char getComputerChoice(){ //gunakan include <ctime> untuk generate random number
+   
+    srand(time(0));
+    int num = rand() % 3 + 1; //ini untuk mendapatkan angka 1 sampe 3
 
-void showBalance(double balance){
-    std::cout << "Your balance is: $" << std::setprecision(2) << std::fixed << balance << "\n";
-}//menggunakan #include <iomanip> untuk mendapatkan angka dibelakang koma 
- //dengan mengatur banyak angka belakang koma yang diinginkan dengan setprecision
-
-double deposit(){
-    double amount = 0;
-    
-    std::cout<< "Enter amount to be deposited: ";
-    std::cin>>amount;
-    if(amount >0){
-        return amount;
+    switch (num){ //disini angka akan digantikan dengan r,p,s dan ditampilkan kata"nya melalui fungsi showchoice
+        case 1 : return 'r';
+        case 2 : return 'p';
+        case 3 : return 's';
     }
-    else{
-        std::cout<< "Thats not a valid amount: \n";
-        return 0; //ini berguna biar bisa balik untuk ngeloop lagi
+   
+    return 0;
+}
+void showChoice(char choice){
+    switch (choice){
+        case 'r' :
+            std::cout << "Rock\n";
+            break;
+        case 'p' :
+            std::cout << "Paper\n";
+            break;
+        case 's' :
+            std::cout << "Scissors\n";
+            break;
+        // default:  ga perlu karena udah di counter ama while loop kalau di luar r/p/s
+        //     break;
     }
 }
-
-double withdraw(double balance){
-    double amount = 0;
-
-    std::cout<< "Enter amount to be withdrawan:";
-    std::cin>>amount;
-
-    if(amount > balance){
-        std::cout<< "Insufficient funds \n";
-        return 0; //untuk ngeloop lagi
+void chooseWinner(char player, char computer){
+    switch(player){
+        case 'r':   if(computer == 'r'){
+                            std::cout << "It's a tie!\n";
+                        }
+                    else if(computer == 'p'){
+                            std::cout << "You Lose!\n";
+                        }
+                    else{
+                        std::cout << "You Win!\n";
+                    }
+                    break;
+        case 'p':   if(computer == 'r'){
+                            std::cout << "You Win!\n";
+                        }
+                    else if(computer == 'p'){
+                            std::cout << "It's a tie!\n";
+                        }
+                    else{
+                        std::cout << "You Lose!\n";
+                    }
+                    break;
+        case 's':   if(computer == 'r'){
+                            std::cout << "You Lose!\n";
+                        }
+                    else if(computer == 'p'){
+                            std::cout << "You Win!\n";
+                        }
+                    else{
+                        std::cout << "It's a tie!\n";
+                    }
+                    break;
     }
-    else if(amount < 0){
-        std::cout << "That's not a valid amount \n";
-        return 0; //untuk ngeloop lagi
-    }
-    else{
-        return amount;
-    }
+
 }
